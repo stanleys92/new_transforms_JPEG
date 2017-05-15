@@ -1,0 +1,26 @@
+This software was created by Independent JPEG Group.
+- modified 2016-2017 by Stanislav Svoboda
+
+modifications:
+  - cjpeg.c
+      - changed command line arguments
+      - added loading whole image to 2D array
+  - djpeg.c
+      - changed command line arguments
+      - added loading whole image to 2D array
+  - jcdctmgr.c
+      - added init whole image 2D array
+  - jddctmgr.c
+      - added init whole image 2D array
+  - jfdctint.c
+      - added new transforms
+  - jidctint.c
+      - added new transforms
+
+additions:
+  - jfdctint.h
+      - added functions for new transforms (FORWARD)
+  - jidctint.h
+      - added functions for new transforms (INVERSE)
+  - trans.h
+      - added functions for allocation of whole image
