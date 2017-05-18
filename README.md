@@ -69,5 +69,5 @@ additions:
 
 
 
-[https://cloud.githubusercontent.com/assets/9696012/26224697/dfcb5c28-3c23-11e7-9c84-fbbbe01e1de9.png]
-[https://cloud.githubusercontent.com/assets/9696012/26224701/e38bbdf8-3c23-11e7-97a3-ad259a409dee.png]
+[Comparison of DCT, WHT, LDCT, SMRT and CDF 9/7, using PSNR metric](https://cloud.githubusercontent.com/assets/9696012/26224697/dfcb5c28-3c23-11e7-9c84-fbbbe01e1de9.png)
+[Comparison of DCT, WHT, LDCT, SMRT, DChT and CDF 9/7, using SSIM metric](https://cloud.githubusercontent.com/assets/9696012/26224701/e38bbdf8-3c23-11e7-97a3-ad259a409dee.png)
