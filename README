@@ -71,5 +71,5 @@ additions:
 
 
 
-![alt text](https://github.com/stanleys92/new_transforms_JPEG/tree/master/graphs/psnr.png "Comparison of DCT, WHT, LDCT, SMRT and CDF 9/7, with PSNR metric.")
-![alt text](https://github.com/stanleys92/new_transforms_JPEG/tree/master/graphs/ssim.png "Comparison of DCT, WHT, LDCT, SMRT, DChT and CDF 9/7, with SSIM metric.")
+![alt text](https://raw.githubusercontent.com/stanleys92/new_transforms_JPEG/master/graphs/psnr.png "Comparison of DCT, WHT, LDCT, SMRT and CDF 9/7, with PSNR metric.")
+![alt text](https://raw.githubusercontent.com/stanleys92/new_transforms_JPEG/master/graphs/ssim.png "Comparison of DCT, WHT, LDCT, SMRT, DChT and CDF 9/7, with SSIM metric.")
