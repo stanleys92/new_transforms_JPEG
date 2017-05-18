@@ -437,11 +437,11 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/stanley/jpeg/jpeg-9b'
+ac_pwd='/home/stanley/public/3/zdroj_libjpeg'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
-AWK='mawk'
+AWK='gawk'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
 ac_need_defaults=:
@@ -563,17 +563,17 @@ SHELL='/bin/bash'
 ECHO='printf %s\n'
 PATH_SEPARATOR=':'
 host_alias=''
-host='i686-pc-linux-gnu'
+host='x86_64-unknown-linux-gnu'
 host_os='linux-gnu'
 build_alias=''
-build='i686-pc-linux-gnu'
+build='x86_64-unknown-linux-gnu'
 build_os='linux-gnu'
 SED='/bin/sed'
 Xsed='/bin/sed -e 1s/^X//'
 GREP='/bin/grep'
 EGREP='/bin/grep -E'
 FGREP='/bin/grep -F'
-LD='/usr/bin/ld'
+LD='/usr/bin/ld -m elf_x86_64'
 NM='/usr/bin/nm -B'
 LN_S='ln -s'
 max_cmd_len='1572864'
@@ -600,9 +600,9 @@ old_postinstall_cmds='chmod 644 $oldlib~$RANLIB $tool_oldlib'
 old_postuninstall_cmds=''
 old_archive_cmds='$AR $AR_FLAGS $oldlib$oldobjs~$RANLIB $tool_oldlib'
 lock_old_archive_extraction='no'
-CC='gcc -std=gnu99'
+CC='gcc'
 CFLAGS='-g -O2'
-compiler='gcc -std=gnu99'
+compiler='gcc'
 GCC='yes'
 lt_cv_sys_global_symbol_pipe='sed -n -e '\''s/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p'\'' | sed '\''/ __gnu_lto/d'\'''
 lt_cv_sys_global_symbol_to_cdecl='sed -n -e '\''s/^T .* \(.*\)$/extern int \1();/p'\'' -e '\''s/^[ABCDGIRSTW][ABCDGIRSTW]* .* \(.*\)$/extern char \1;/p'\'''
@@ -679,8 +679,8 @@ postuninstall_cmds=''
 finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
-sys_lib_search_path_spec='/usr/lib/gcc/i686-linux-gnu/4.9 /usr/lib/i386-linux-gnu /usr/lib /lib/i386-linux-gnu /lib '
-configure_time_dlsearch_path='/lib /usr/lib /usr/lib/i386-linux-gnu/mesa-egl /usr/lib/i386-linux-gnu/mesa /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib '
+sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/5 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
+configure_time_dlsearch_path='/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /usr/local/lib /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/mesa-egl /usr/lib/x86_64-linux-gnu/mesa '
 configure_time_lt_sys_library_path=''
 hardcode_action='immediate'
 enable_dlopen='unknown'
@@ -689,9 +689,9 @@ enable_dlopen_self_static='unknown'
 old_striplib='strip --strip-debug'
 striplib='strip --strip-unneeded'
 
-LTCC='gcc -std=gnu99'
+LTCC='gcc'
 LTCFLAGS='-g -O2'
-compiler='gcc -std=gnu99'
+compiler='gcc'
 
 # A function that is used when there is no print builtin or printf.
 func_fallback_echo ()
@@ -833,7 +833,7 @@ S["RANLIB"]="ranlib"
 S["NM"]="/usr/bin/nm -B"
 S["ac_ct_DUMPBIN"]=""
 S["DUMPBIN"]=""
-S["LD"]="/usr/bin/ld"
+S["LD"]="/usr/bin/ld -m elf_x86_64"
 S["FGREP"]="/bin/grep -F"
 S["SED"]="/bin/sed"
 S["LIBTOOL"]="$(SHELL) $(top_builddir)/libtool"
@@ -847,7 +847,7 @@ S["HAVE_LD_VERSION_SCRIPT_TRUE"]=""
 S["ac_ct_AR"]="ar"
 S["AR"]="ar"
 S["LN_S"]="ln -s"
-S["CPP"]="gcc -std=gnu99 -E"
+S["CPP"]="gcc -E"
 S["am__fastdepCC_FALSE"]="#"
 S["am__fastdepCC_TRUE"]=""
 S["CCDEPMODE"]="depmode=gcc3"
@@ -864,7 +864,7 @@ S["ac_ct_CC"]="gcc"
 S["CPPFLAGS"]=""
 S["LDFLAGS"]=""
 S["CFLAGS"]="-g -O2"
-S["CC"]="gcc -std=gnu99"
+S["CC"]="gcc"
 S["MAINT"]="#"
 S["MAINTAINER_MODE_FALSE"]=""
 S["MAINTAINER_MODE_TRUE"]="#"
@@ -877,17 +877,17 @@ S["am__tar"]="$${TAR-tar} chof - \"$$tardir\""
 S["AMTAR"]="$${TAR-tar}"
 S["am__leading_dot"]="."
 S["SET_MAKE"]=""
-S["AWK"]="mawk"
+S["AWK"]="gawk"
 S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /home/stanley/jpeg/jpeg-9b/install-sh"
-S["MAKEINFO"]="${SHELL} /home/stanley/jpeg/jpeg-9b/missing makeinfo"
+S["install_sh"]="${SHELL} /home/stanley/public/3/zdroj_libjpeg/install-sh"
+S["MAKEINFO"]="${SHELL} /home/stanley/public/3/zdroj_libjpeg/missing makeinfo"
 S["AUTOHEADER"]="echo autoheader ignored"
-S["AUTOMAKE"]="${SHELL} /home/stanley/jpeg/jpeg-9b/missing automake-1.15"
-S["AUTOCONF"]="${SHELL} /home/stanley/jpeg/jpeg-9b/missing autoconf"
-S["ACLOCAL"]="${SHELL} /home/stanley/jpeg/jpeg-9b/missing aclocal-1.15"
+S["AUTOMAKE"]="${SHELL} /home/stanley/public/3/zdroj_libjpeg/missing automake-1.15"
+S["AUTOCONF"]="${SHELL} /home/stanley/public/3/zdroj_libjpeg/missing autoconf"
+S["ACLOCAL"]="${SHELL} /home/stanley/public/3/zdroj_libjpeg/missing aclocal-1.15"
 S["VERSION"]="9.2.0"
 S["PACKAGE"]="libjpeg"
 S["CYGPATH_W"]="echo"
@@ -896,21 +896,21 @@ S["INSTALL_DATA"]="${INSTALL} -m 644"
 S["INSTALL_SCRIPT"]="${INSTALL}"
 S["INSTALL_PROGRAM"]="${INSTALL}"
 S["target_os"]="linux-gnu"
-S["target_vendor"]="pc"
-S["target_cpu"]="i686"
-S["target"]="i686-pc-linux-gnu"
+S["target_vendor"]="unknown"
+S["target_cpu"]="x86_64"
+S["target"]="x86_64-unknown-linux-gnu"
 S["host_os"]="linux-gnu"
-S["host_vendor"]="pc"
-S["host_cpu"]="i686"
-S["host"]="i686-pc-linux-gnu"
+S["host_vendor"]="unknown"
+S["host_cpu"]="x86_64"
+S["host"]="x86_64-unknown-linux-gnu"
 S["build_os"]="linux-gnu"
-S["build_vendor"]="pc"
-S["build_cpu"]="i686"
-S["build"]="i686-pc-linux-gnu"
+S["build_vendor"]="unknown"
+S["build_cpu"]="x86_64"
+S["build"]="x86_64-unknown-linux-gnu"
 S["target_alias"]=""
 S["host_alias"]=""
 S["build_alias"]=""
-S["LIBS"]=""
+S["LIBS"]="-lm"
 S["ECHO_T"]=""
 S["ECHO_N"]="-n"
 S["ECHO_C"]=""

@@ -1,6 +1,8 @@
 /*   jidctint.h
 Added 2016-2017 by Stanislav Svoboda
   - added functions for allocation of whole image
+Copyright (C) 2016, 2017 Stanislav Svoboda
+For conditions of distribution and use, see the accompanying LICENSE.md file.
 */
 
 #include <stdlib.h>
@@ -8,7 +10,6 @@ Added 2016-2017 by Stanislav Svoboda
 
 #ifndef IMAGE_ARRAY_H
 #define IMAGE_ARRAY_H 1
-//allocation of 2D array
 static double **mallocMatrix(int w,int h){
   double **matrix=malloc(sizeof(double*)*h);
   for(int i=0;i<h;i++){
@@ -35,16 +36,8 @@ int widthCHImg;
 int heightCHImg;
 
 
-
-
-
-//int transV=0;
 int transV;
 
-
-
-
-//int transIV=0;
 int transIV;
 
 

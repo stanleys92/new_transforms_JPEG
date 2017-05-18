@@ -13670,7 +13670,7 @@ rm -f confcache
 test "x$prefix" = xNONE && prefix=$ac_default_prefix
 # Let make expand exec_prefix.
 test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
-
+LIBS=-lm
 DEFS=-DHAVE_CONFIG_H
 
 ac_libobjs=

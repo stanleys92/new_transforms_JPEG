@@ -1,6 +1,8 @@
 /*   jidctint.h
 Added 2016-2017 by Stanislav Svoboda
   - added functions for new transforms (INVERSE)
+Copyright (C) 2016, 2017 Stanislav Svoboda
+For conditions of distribution and use, see the accompanying LICENSE.md file.
 */
 
 #include <stdio.h>

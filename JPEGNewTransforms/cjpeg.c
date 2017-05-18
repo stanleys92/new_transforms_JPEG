@@ -29,6 +29,7 @@ Modified 2016-2017 by Stanislav Svoboda
 Modifications:
   - changed command line arguments
   - added loading whole image to 2D array
+Copyright (C) 2016, 2017 Stanislav Svoboda
 */
 
 #include "trans.h"
@@ -212,6 +213,21 @@ usage (void)
 #ifdef C_MULTISCAN_FILES_SUPPORTED
   fprintf(stderr, "  -scans file    Create multi-scan JPEG per script file\n");
 #endif
+  fprintf(stderr, "--------------New transforms---------------\n");
+  fprintf(stderr, "  -trans dct          discrete cosine transform\n");
+  fprintf(stderr, "  -trans dst          discrete sine transform\n");
+  fprintf(stderr, "  -trans dht          discrete Hartleyho transformace\n");
+  fprintf(stderr, "  -trans wht          Walshova-Hadamardova transformace\n");
+  fprintf(stderr, "  -trans wav          discrete wavelet transform - separable CDF 5/3\n");
+  fprintf(stderr, "  -trans wav97        discrete wavelet transform - separable CDF 9/7\n");
+  fprintf(stderr, "  -trans wavrb        discrete wavelet transform - nonseparable CDF 5/3\n");
+  fprintf(stderr, "  -trans wavrb97      discrete wavelet transform - nonseparable CDF 9/7\n");
+  fprintf(stderr, "  -trans wavall       discrete wavelet transform - modified CDF 5/3\n");
+  fprintf(stderr, "  -trans wavall97     discrete wavelet transform - modified CDF 9/7\n");
+  fprintf(stderr, "  -trans dcht         discrete Chebyshev transform\n");
+  fprintf(stderr, "  -trans ldct         local discrete cosine transform\n");
+  fprintf(stderr, "  -trans smrt         mapped real transform\n");
+  fprintf(stderr, "  -trans adct         approximate discrete cosine transform\n");
   exit(EXIT_FAILURE);
 }
 
@@ -300,53 +316,53 @@ parse_switches (j_compress_ptr cinfo, int argc, char **argv,
       if (keymatch(argv[argn], "int", 1)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transV=0;
-      } else if (keymatch(argv[argn], "mydct", 2)) {
+      } else if (keymatch(argv[argn], "dct", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transV=1;
-      } else if (keymatch(argv[argn], "mydst", 2)) {
+      } else if (keymatch(argv[argn], "dst", 2)) {
         transV=2;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywht", 2)) {
+      } else if (keymatch(argv[argn], "wht", 2)) {
         transV=3;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywav", 2)) {
+      } else if (keymatch(argv[argn], "wav", 2)) {
         transV=4;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW; 
-      } else if (keymatch(argv[argn], "mywav97", 2)) {
+      } else if (keymatch(argv[argn], "wav97", 2)) {
         transV=5;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywavrb", 2)) {
+      } else if (keymatch(argv[argn], "wavrb", 2)) {
         transV=6;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywavrb97", 2)) {
+      } else if (keymatch(argv[argn], "wavrb97", 2)) {
         transV=7;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywavall", 2)) {
+      } else if (keymatch(argv[argn], "wavall", 2)) {
         transV=8;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "myadct", 2)) {
+      } else if (keymatch(argv[argn], "adct", 2)) {
         transV=10;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mywavall97", 2)) {
+      } else if (keymatch(argv[argn], "wavall97", 2)) {
         transV=9;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "myldct", 2)) {
+      } else if (keymatch(argv[argn], "ldct", 2)) {
         transV=11;
         if(load_matrix==0) load_matrix=1;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mydcht", 2)) {
+      } else if (keymatch(argv[argn], "dcht", 2)) {
         transV=12;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mysmrt", 2)) {
+      } else if (keymatch(argv[argn], "smrt", 2)) {
         transV=14;
 	cinfo->dct_method = JDCT_ISLOW;
-      } else if (keymatch(argv[argn], "mydht", 2)) {
+      } else if (keymatch(argv[argn], "dht", 2)) {
         transV=13;
 	cinfo->dct_method = JDCT_ISLOW;
       } else if (keymatch(argv[argn], "fast", 2)) {

@@ -20,6 +20,7 @@
 Modified 2016-2017 by Stanislav Svoboda
 Modifications:
   - added init whole image 2D array
+Copyright (C) 2016, 2017 Stanislav Svoboda
 */
 
 #define JPEG_INTERNALS

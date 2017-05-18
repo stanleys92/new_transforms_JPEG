@@ -52,6 +52,7 @@
 Modified 2016-2017 by Stanislav Svoboda
 Modifications:
   - added new transforms
+Copyright (C) 2016, 2017 Stanislav Svoboda
 */
 
 #define JPEG_INTERNALS

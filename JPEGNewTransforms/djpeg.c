@@ -29,6 +29,7 @@ Modified 2016-2017 by Stanislav Svoboda
 Modifications:
   - changed command line arguments
   - added loading whole image to 2D array
+Copyright (C) 2016, 2017 Stanislav Svoboda
 */
 
 #include "trans.h"
@@ -164,6 +165,21 @@ usage (void)
   fprintf(stderr, "  -maxmemory N   Maximum memory to use (in kbytes)\n");
   fprintf(stderr, "  -outfile name  Specify name for output file\n");
   fprintf(stderr, "  -verbose  or  -debug   Emit debug output\n");
+  fprintf(stderr, "--------------New transforms---------------\n");
+  fprintf(stderr, "  -trans idct          inverse discrete cosine transform\n");
+  fprintf(stderr, "  -trans idst          inverse discrete sine transform\n");
+  fprintf(stderr, "  -trans idht          inverse discrete Hartleyho transformace\n");
+  fprintf(stderr, "  -trans iwht          inverse Walshova-Hadamardova transformace\n");
+  fprintf(stderr, "  -trans iwav          inverse discrete wavelet transform - separable CDF 5/3\n");
+  fprintf(stderr, "  -trans iwav97        inverse discrete wavelet transform - separable CDF 9/7\n");
+  fprintf(stderr, "  -trans iwavrb        inverse discrete wavelet transform - nonseparable CDF 5/3\n");
+  fprintf(stderr, "  -trans iwavrb97      inverse discrete wavelet transform - nonseparable CDF 9/7\n");
+  fprintf(stderr, "  -trans iwavall       inverse discrete wavelet transform - modified CDF 5/3\n");
+  fprintf(stderr, "  -trans iwavall97     inverse discrete wavelet transform - modified CDF 9/7\n");
+  fprintf(stderr, "  -trans idcht         inverse discrete Chebyshev transform\n");
+  fprintf(stderr, "  -trans ildct         inverse local discrete cosine transform\n");
+  fprintf(stderr, "  -trans ismrt         inverse mapped real transform\n");
+  fprintf(stderr, "  -trans iadct         inverse approximate discrete cosine transform\n");
   exit(EXIT_FAILURE);
 }
 
@@ -225,53 +241,53 @@ parse_switches (j_decompress_ptr cinfo, int argc, char **argv,
       if (keymatch(argv[argn], "int", 1)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=0;
-      } else if (keymatch(argv[argn], "myidct", 2)) {
+      } else if (keymatch(argv[argn], "idct", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=1;
-      } else if (keymatch(argv[argn], "myidst", 2)) {
+      } else if (keymatch(argv[argn], "idst", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=2;
-      } else if (keymatch(argv[argn], "myiwht", 2)) {
+      } else if (keymatch(argv[argn], "iwht", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=3;
-      } else if (keymatch(argv[argn], "myiwav", 2)) {
+      } else if (keymatch(argv[argn], "iwav", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=4;
         if(load_matrix==0) load_matrix=1;
-      } else if (keymatch(argv[argn], "myiwav97", 2)) {
+      } else if (keymatch(argv[argn], "iwav97", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=5;
         if(load_matrix==0) load_matrix=1;  
-      } else if (keymatch(argv[argn], "myiwavrb", 2)) {
+      } else if (keymatch(argv[argn], "iwavrb", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=6;
         if(load_matrix==0) load_matrix=1;  
-      } else if (keymatch(argv[argn], "myiwavrb97", 2)) {
+      } else if (keymatch(argv[argn], "iwavrb97", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=7;
         if(load_matrix==0) load_matrix=1;  
-      } else if (keymatch(argv[argn], "myiwavall", 2)) {
+      } else if (keymatch(argv[argn], "iwavall", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=8;
         if(load_matrix==0) load_matrix=1;  
-      } else if (keymatch(argv[argn], "myiwavall97", 2)) {
+      } else if (keymatch(argv[argn], "iwavall97", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=9;
         if(load_matrix==0) load_matrix=1;  
-      } else if (keymatch(argv[argn], "myiadct", 2)) {
+      } else if (keymatch(argv[argn], "iadct", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=10;
-      } else if (keymatch(argv[argn], "myildct", 2)) {
+      } else if (keymatch(argv[argn], "ildct", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=11;
         if(load_matrix==0) load_matrix=1;
-      } else if (keymatch(argv[argn], "myidcht", 2)) {
+      } else if (keymatch(argv[argn], "idcht", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=12;
-      } else if (keymatch(argv[argn], "myidht", 2)) {
+      } else if (keymatch(argv[argn], "idht", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=13;
-      } else if (keymatch(argv[argn], "myismrt", 2)) {
+      } else if (keymatch(argv[argn], "ismrt", 2)) {
 	cinfo->dct_method = JDCT_ISLOW;
         transIV=14;
       } else if (keymatch(argv[argn], "fast", 2)) {
