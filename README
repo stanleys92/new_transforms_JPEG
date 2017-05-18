@@ -71,5 +71,5 @@ additions:
 
 
 
-![alt text](graphs/psnr.pdf "Comparison of DCT, WHT, LDCT, SMRT and CDF 9/7, with PSNR metric.")
-![alt text](graphs/ssim.pdf "Comparison of DCT, WHT, LDCT, SMRT, DChT and CDF 9/7, with SSIM metric.")
+![alt text](graphs/psnr.png "Comparison of DCT, WHT, LDCT, SMRT and CDF 9/7, with PSNR metric.")
+![alt text](graphs/ssim.png "Comparison of DCT, WHT, LDCT, SMRT, DChT and CDF 9/7, with SSIM metric.")
